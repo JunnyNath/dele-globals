@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Dele Global Plant Rentals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/crane_15479657.png" />
+    <!-- emailjs form connection -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script src="emailjs.js"></script>
+
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "n8Z_pUybSdrRHxmfq",
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">
+          <!-- <span class="brand-mark">D</span> -->
+          <img src="images\crane_15479657.png" alt="" height="30px" />
+          <span class="brand-text">Dele<span>Global</span>Plants</span>
+        </a>
+
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <nav class="nav" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Equipment</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <h1 data-aos="fade-up" style="color: var(--primary)">Get a Quote</h1>
+          <p data-aos="fade-up" data-aos-delay="100">
+            Tell us your job details — we’ll respond within the hour.
+          </p>
+        </div>
+      </section>
+
+      <section class="container section contact-grid">
+        <form class="contact-form card" id="contactForm" data-aos="fade-right">
+          <div class="row">
+            <label
+              >Full Name<input type="text" name="name" id="name" required
+            /></label>
+            <label
+              >Company<input type="text" name="company" id="company"
+            /></label>
+          </div>
+          <div class="row">
+            <label
+              >Email<input type="email" id="email" name="email" required
+            /></label>
+            <label
+              >Phone<input type="tel" id="phone" name="phone" required
+            /></label>
+          </div>
+          <label
+            >Equipment
+            <select name="equipment" id="equipment-select">
+              <option value="Crane">Crane</option>
+              <option value="Forklift">Forklift</option>
+              <option value="Hydraulic Press">Hydraulic Press</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+          <div class="row">
+            <label
+              >Start Date<input type="date" name="start" id="start"
+            /></label>
+            <label
+              >Duration (days)<input
+                type="number"
+                name="duration"
+                id="duration"
+                min="1"
+            /></label>
+          </div>
+          <label>Project Location<input name="location" id="location" /></label>
+          <label
+            >Notes<textarea
+              name="notes"
+              rows="5"
+              id="notes"
+              placeholder="Capacity, reach, special requirements, etc."
+            ></textarea>
+          </label>
+          <div style="padding-top: 20px">
+            <button
+              type="submit"
+              class="btn btn-primary btn-lg"
+              onclick="sendMail()"
+            >
+              Send Request
+            </button>
+          </div>
+
+          <div id="formMessage"></div>
+        </form>
+
+        <aside class="card contact-aside" data-aos="fade-left">
+          <h3>Contact Us</h3>
+          <div
+            class="james"
+            style="display: flex; align-items: center; gap: 10%"
+          >
+            <img
+              src="images\IMG-20250910-WA0000.jpg"
+              alt=""
+              height="200px"
+              style="border-radius: 150px"
+            />
+            <div class="bami">
+              <div>
+                <h3 class="align-text" style="position: absolute">
+                  The <span style="color: #ffd02a">Director</span>
+                </h3>
+              </div>
+              <div class="bam-pad" style="padding-top: 30px">
+                <p><i>Engr. James Obiti Bamidele</i></p>
+              </div>
+            </div>
+          </div>
+          <p><i class="ri-mail-line"></i> jamesobitibamidele402@gmail.com</p>
+          <p>
+            <i class="ri-phone-line"></i> +234 705 485 3383, +234 815 151 1110,
+            +234 706 886 7121, +234 907 489 9907
+          </p>
+          <p><i class="ri-time-line"></i> 24/7 Dispatch</p>
+          <p>
+            <i class="ri-map-pin-line"></i> Km 35A/35B, Lagos-Ibadan Expressway
+            Beside Osadol Filling Station Close to First Bank
+          </p>
+          <div class="map-embed">
+            <iframe
+              title="Map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d686.1619971795785!2d3.422301204978762!3d6.745615156225197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bc0065a5e0e8d%3A0xf28b494c739fe96c!2sPCWF%2B93H%2C%20Ibafo%20110113%2C%20Ogun%20State!5e1!3m2!1sen!2sng!4v1756903853034!5m2!1sen!2sng"
+              width="400"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+            <!-- <img src="imagenode servers\thumbnail.jpg" alt="" width="200px" style="border-radius: 5px;"> -->
+          </div>
+          <div class="note">
+            Update the map pin to your yard or office location.
+          </div>
+        </aside>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand brand--footer">
+            <span class="brand-mark">D</span>
+            <span class="brand-text">Dele<span>Global</span>Plants</span>
+          </div>
+          <p>
+            Reliable cranes, forklifts, hydraulic presses and more — rented with
+            safety-first service.
+          </p>
+          <div class="socials">
+            <a
+              href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=ski9r69"
+              aria-label="Instagram"
+              ><i class="ri-instagram-line"></i
+            ></a>
+            <a href="https://wa.me/2347054853383" aria-label="Whatsapp"
+              ><i class="ri-whatsapp-line"></i
+            ></a>
+            <a href="https://www.fb.com/l/6lplkJRRR" aria-label="Facebook"
+              ><i class="ri-facebook-line"></i
+            ></a>
+          </div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="products.html">All Equipment</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Safety Standards</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Terms & Policies</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Newsletter</h4>
+          <form
+            action="https://us10.api.mailchimp.com/3.0/lists/1c94b56dee/members"
+            id="newsletter-form"
+            class="newsletter"
+            onsubmit="event.preventDefault(); subscribeNewsletter(this)"
+          >
+            <input
+              type="email"
+              placeholder="Email address"
+              id="email"
+              style="border: 1px solid var(--text); border-radius: 8px"
+              required
+            />
+            <button class="btn btn-secondary">Subscribe</button>
+          </form>
+
+          <p id="response"></p>
+        </div>
+      </div>
+      <div class="container legal">
+        <p>
+          © <span id="year"></span> Dele Global Plants Rentals. All rights
+          reserved.
+        </p>
+        <a href="#top" class="to-top" aria-label="Back to top"
+          ><i class="ri-arrow-up-line"></i
+        ></a>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({ once: true, duration: 800, offset: 80 });
+    </script>
+  </body>
+</html>

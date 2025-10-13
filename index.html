@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Dele Global Plants Rentals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="images/crane_15479657.png">
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">
+          <!-- <span class="brand-mark">D</span> -->
+          <img src="images\crane_15479657.png" alt="" height="30px" />
+          <span class="brand-text">Dele<span>Global</span>Plants</span>
+        </a>
+
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="nav" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Equipment</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-media">
+          <img
+            src="images\walter-martin-vV3X7VTdva8-unsplash.jpg"
+            alt="Tower crane at a construction site"
+          />
+          <div class="scrim"></div>
+        </div>
+        <div class="container hero-content" data-aos="fade-up">
+          <h1>Heavy Machinery, <span>On Demand</span>.</h1>
+          <p>
+            Rent cranes, forklifts, hydraulic presses and more with trusted
+            operators and same‑day dispatch.
+          </p>
+          <form
+            class="searchbar"
+            onsubmit="event.preventDefault(); window.location.href='products.html'"
+          >
+            <select>
+              <option selected>All Equipment</option>
+              <option>Cranes</option>
+              <option>Forklifts</option>
+              <option>Hydraulic Presses</option>
+              <option>Attachments</option>
+            </select>
+            <input type="text" placeholder="Capacity, model, or keyword" />
+            <input type="date" />
+            <button class="btn btn-primary">
+              <i class="ri-search-line"></i> Search
+            </button>
+          </form>
+          <div class="hero-cta">
+            <a class="btn btn-secondary" href="contact.html"
+              ><i class="ri-chat-1-line"></i> Request a Quote</a
+            >
+            <a class="btn btn-ghost" href="#fleet"
+              ><i class="ri-arrow-down-line"></i> Explore Fleet</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="badges container" data-aos="fade-up">
+        <div class="badge">
+          <i class="ri-shield-check-line"></i> ISO 45001 Safety
+        </div>
+        <div class="badge"><i class="ri-timer-2-line"></i> 24/7 Support</div>
+        <div class="badge">
+          <i class="ri-tools-line"></i> Certified Operators
+        </div>
+        <div class="badge">
+          <i class="ri-truck-line"></i> Nationwide Delivery
+        </div>
+      </section>
+
+      <section id="fleet" class="container section">
+        <div class="section-head">
+          <h2 data-aos="fade-up">Featured Fleet</h2>
+          <p data-aos="fade-up" data-aos-delay="100">
+            Top‑requested machines ready for rapid deployment.
+          </p>
+        </div>
+        <div class="cards">
+          <article class="card" data-aos="zoom-in">
+            <div class="card-media">
+              <img
+                src="images\mun-the-boi-0lQh54-unNg-unsplash.jpg"
+                alt="Mobile crane lifting load"
+              />
+            </div>
+            <div class="card-body">
+              <h3>Mobile Crane 80T</h3>
+              <p>Telescopic boom • 60 m reach • All‑terrain</p>
+            </div>
+            <div class="card-footer">
+              <span class="price">₦450k/day</span>
+              <a class="btn btn-primary" href="products.html#crane-80t"
+                >Check Availability</a
+              >
+            </div>
+          </article>
+
+          <article class="card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card-media">
+              <img
+                src="images\spencer-davis-a_4tgP1t6Y0-unsplash.jpg"
+                alt="Forklift in a warehouse"
+              />
+            </div>
+            <div class="card-body">
+              <h3>Forklift 5T Diesel</h3>
+              <p>Triplex mast • 5,000 kg • Outdoor/Indoor</p>
+            </div>
+            <div class="card-footer">
+              <span class="price">₦95k/day</span>
+              <a class="btn btn-primary" href="products.html#forklift-5t"
+                >Check Availability</a
+              >
+            </div>
+          </article>
+
+          <article class="card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card-media">
+              <img
+                src="images\georg-eiermann-hgDKYLALCdc-unsplash.jpg"
+                alt="Industrial press in factory"
+              />
+            </div>
+            <div class="card-body">
+              <h3>Hydraulic Press 200T</h3>
+              <p>PLC control • Safety light curtains • Quick die change</p>
+            </div>
+            <div class="card-footer">
+              <span class="price">₦320k/day</span>
+              <a class="btn btn-primary" href="products.html#press-200t"
+                >Check Availability</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="split container section">
+        <div class="split-media" data-aos="fade-right">
+          <img
+            src="images\crane-blue-sky.jpg"
+            alt="Operator handling crane"
+            style="border-radius: 12px"
+          />
+        </div>
+        <div class="split-body" data-aos="fade-left">
+          <h2>Safety isn’t a feature — it’s our culture.</h2>
+          <p>
+            Every job begins with site assessment and risk checks. Our machines
+            are maintained in-house, inspected between hires, and shipped with
+            certified operators on request.
+          </p>
+          <ul class="ticks">
+            <li><i class="ri-check-line"></i> Pre‑hire inspection reports</li>
+            <li>
+              <i class="ri-check-line"></i> Operator training & inductions
+            </li>
+            <li><i class="ri-check-line"></i> Compliance documentation</li>
+          </ul>
+          <a class="btn btn-secondary" href="about.html">Learn More</a>
+        </div>
+      </section>
+
+      <section class="container section testimonials">
+        <div class="section-head">
+          <h2 data-aos="fade-up">What clients say</h2>
+        </div>
+        <div class="cards cards--auto">
+          <blockquote class="quote" data-aos="fade-up">
+            <p>
+              “Fast response, spotless equipment, and an operator who knew the
+              job.”
+            </p>
+            <span>— M. Adewale, Site Manager</span>
+          </blockquote>
+          <blockquote class="quote" data-aos="fade-up" data-aos-delay="100">
+            <p>
+              “Their 80T mobile crane lifted our chillers with no drama. Will
+              hire again.”
+            </p>
+            <span>— A. Okoro, Facilities Lead</span>
+          </blockquote>
+          <blockquote class="quote" data-aos="fade-up" data-aos-delay="200">
+            <p>“Safety-first approach that saved us hours onsite.”</p>
+            <span>— T. Bello, Project Engineer</span>
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="cta container section" data-aos="zoom-in">
+        <h2>Ready to lift your project?</h2>
+        <p>Tell us what you need and we’ll dispatch the right machine today.</p>
+        <a class="btn btn-primary btn-lg" href="contact.html"
+          >Request a Quote</a
+        >
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand brand--footer">
+            <span class="brand-mark">D</span>
+            <span class="brand-text">Dele<span>Global</span>Plants</span>
+          </div>
+          <p>
+            Reliable cranes, forklifts, hydraulic presses and more — rented with
+            safety-first service.
+          </p>
+          <div class="socials">
+            <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=ski9r69" aria-label="Instagram"
+              ><i class="ri-instagram-line"></i
+            ></a>
+            <a href="https://wa.me/2347054853383" aria-label="Whatsapp"
+              ><i class="ri-whatsapp-line"></i
+            ></a>
+            <a href="https://www.fb.com/l/6lplkJRRR" aria-label="Facebook"
+              ><i class="ri-facebook-line"></i
+            ></a>
+          </div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="products.html">All Equipment</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Safety Standards</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Terms & Policies</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Newsletter</h4>
+          <form action="https://us10.api.mailchimp.com/3.0/lists/1c94b56dee/members"
+            id="newsletter-form"
+            class="newsletter"
+            onsubmit="event.preventDefault(); subscribeNewsletter(this)"
+          >
+            <input
+              type="email"
+              placeholder="Email address"
+              id="email"
+              style="border: 1px solid var(--text); border-radius: 8px;"
+              required
+            />
+            <button class="btn btn-secondary">Subscribe</button>
+          </form>
+
+          <p id="response"></p>
+        </div>
+      </div>
+      <div class="container legal">
+        <p>
+          © <span id="year"></span> Dele Global Plants Rentals. All rights
+          reserved.
+        </p>
+        <a href="#top" class="to-top" aria-label="Back to top"
+          ><i class="ri-arrow-up-line"></i
+        ></a>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({ once: true, duration: 800, offset: 80 });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,239 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark">
+  <title>Dele Global Plants Rentals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="images/crane_15479657.png">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <!-- <span class="brand-mark">D</span> -->
+        <img src="images\crane_15479657.png" alt="" height="30px">
+        <span class="brand-text">Dele<span>Global</span>Plants</span>
+      </a>
+
+      <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+      <nav class="nav" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Equipment</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+      </nav>
+
+       
+    </div>
+  </header>
+  <main>
+
+<section class="page-hero">
+  <div class="container">
+    <h1 data-aos="fade-up">Our Equipment</h1>
+    <p data-aos="fade-up" data-aos-delay="100">Browse by category, capacity, or availability.</p>
+    <div class="filters" data-aos="fade-up" data-aos-delay="150">
+      <select id="filter-category">
+        <option value="all">All</option>
+        <option value="crane">Cranes</option>
+        <option value="forklift">Forklifts</option>
+        <option value="press">Hydraulic Presses</option>
+        <option value="attachment">Attachments</option>
+      </select>
+      <select id="filter-capacity">
+        <option value="any">Any Capacity</option>
+        <option value="lt5">Under 5T</option>
+        <option value="5to20">5–20T</option>
+        <option value="gt20">Over 20T</option>
+      </select>
+      <input id="filter-search" type="text" placeholder="Search by model or feature" />
+    </div>
+    
+  </div>
+</section>
+
+<section class="container section">
+  <div class="equipment-grid" data-aos="fade-up" data-aos-delay="200">
+  <!-- Crane -->
+  <div class="equipment-card"
+       data-category="crane"
+       data-capacity="gt20"
+       data-model="XCMG QY50"
+       data-features="Heavy-duty lifting crane for construction and industrial use">
+    <img src="images\IMG-20250910-WA0001.jpg" alt="Crane">
+    <h3>50T Crane</h3>
+    <p>Heavy-duty lifting crane for construction and industrial use.</p>
+    <button class="availability-btn" data-model="XCMG QY50">Check Availability</button>
+  </div>
+  <!-- Bulldozer -->
+  <div class="equipment-card"
+       data-category="Bulldozer"
+       data-capacity="gt20"
+       data-model="CAT D6"
+       data-features="Reliable earth-moving bulldozer with strong pushing power">
+    <img src="images\IMG-20250910-WA0003.jpg" alt="Bulldozer">
+    <h3>CAT D6 Bulldozer</h3>
+    <p>Reliable earth-moving bulldozer with strong pushing power.</p>
+    <button class="availability-btn" data-model="CAT D6">Check Availability</button>
+  </div>
+  <!-- Excavator -->
+  <div class="equipment-card"
+       data-category="Excavator"
+       data-capacity="gt20"
+       data-model="Komatsu PC210"
+       data-features="Durable excavator for digging, lifting, and site preparation">
+    <img src="images\IMG-20250910-WA0004.jpg" alt="Excavator">
+    <h3>Komatsu PC210 Excavator</h3>
+    <p>Durable excavator for digging, lifting, and site prep.</p>
+    <button class="availability-btn" data-model="Komatsu PC210">Check Availability</button>
+  </div>
+  <!-- Forklift -->
+  <div class="equipment-card"
+       data-category="Forklift"
+       data-capacity="5to20"
+       data-model="Toyota 8FGCU25"
+       data-features="Compact forklift for warehouses and construction sites">
+    <img src="images\IMG-20250910-WA0005.jpg" alt="Forklift">
+    <h3>Toyota Forklift 3T</h3>
+    <p>Compact forklift for warehouses and construction sites.</p>
+    <button class="availability-btn" data-model="Toyota 8FGCU25">Check Availability</button>
+  </div>
+  <!-- Hydraulic Press -->
+  <div class="equipment-card"
+       data-category="Hydraulic press"
+       data-capacity="gt20"
+       data-model="Enerpac 100T Press"
+       data-features="High-pressure hydraulic press for industrial operations">
+    <img src="images\IMG-20250910-WA0006.jpg" alt="Hydraulic Press">
+    <h3>Enerpac 100T Press</h3>
+    <p>High-pressure hydraulic press for industrial operations.</p>
+    <button class="availability-btn" data-model="Enerpac 100T Press">Check Availability</button>
+  </div>
+</div>
+</section>
+
+
+<section class="equip-hero">
+  <div class="container">
+    <h1 data-aos="fade-up">Our Equipment</h1>
+    <p data-aos="fade-up" data-aos-delay="100">
+      Discover our wide range of heavy-duty machinery and industrial equipment, carefully maintained for safety and reliability. Whether you need cranes for lifting, forklifts for logistics, or hydraulic presses for manufacturing, we have the right solution for your project.
+    </p>
+    <p data-aos="fade-up" data-aos-delay="120">
+      Browse by category, capacity, or availability below. For expert advice or custom rental packages.<a href="contact.html" class="btn btn-primary btn-sm" style="margin-left:8px;">Contact Us</a>
+    </p>
+    <div class="filters" data-aos="fade-up" data-aos-delay="150">
+      <!-- ...existing filter code... -->
+<section class="container section">
+  <div class="equipment-gallery" style="
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    justify-items: center;
+    align-items: start;
+    padding: 16px 0;
+  ">
+    <img src="Mr james engr/IMG-20250920-WA0002.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0003.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0004.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0005.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0006.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0007.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0010.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0011.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0012.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0013.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0014.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0015.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0016.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0017.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0018.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0019.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0020.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0021.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0022.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0023.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0024.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0025.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0026.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0027.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0028.jpg" alt="" style="width:100%; height:63%;
+    max-width: 300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0029.jpg" alt="" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0030.jpg" alt="" style="width:100%; height:70%; max-width:300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+    <img src="Mr james engr/IMG-20250920-WA0031.jpg" alt="" style="width:100%; height:70%;
+    max-width: 300px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+  </div>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand brand--footer">
+          <span class="brand-mark">D</span>
+          <span class="brand-text">Dele<span>Global</span>Plants</span>
+        </div>
+        <p>Reliable cranes, forklifts, hydraulic presses and more — rented with safety-first service.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=ski9r69" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <a href="https://wa.me/2347054853383" aria-label="Whatsapp"><i class="ri-whatsapp-line"></i></a>
+          <a href="https://www.fb.com/l/6lplkJRRR" aria-label="Facebook"><i class="ri-facebook-line"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="products.html">All Equipment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Safety Standards</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Terms & Policies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <form action="https://us10.api.mailchimp.com/3.0/lists/1c94b56dee/members" 
+        id="newsletter-form"
+        class="newsletter" onsubmit="event.preventDefault(); subscribeNewsletter(this)">
+          <input type="email" placeholder="Email address" id="email" style="border: 1px solid var(--text); border-radius: 8px;" required />
+          <button class="btn btn-secondary">Subscribe</button>
+        </form>
+
+         <p id="response"></p>
+
+      </div>
+    </div>
+    <div class="container legal">
+      <p>© <span id="year"></span> Dele Global Plants Rentals. All rights reserved.</p>
+      <a href="#top" class="to-top" aria-label="Back to top"><i class="ri-arrow-up-line"></i></a>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ once: true, duration: 800, offset: 80 });</script>
+
+</body>
+</html>
+
