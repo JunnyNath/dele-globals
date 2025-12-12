@@ -208,3 +208,15 @@ function subscribeNewsletter(formElement) {
   });
 }
 
+// Gallery "Show more" toggle for products page
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('gallery-toggle');
+  if (!toggle) return;
+
+  toggle.addEventListener('click', () => {
+    const expanded = document.body.classList.toggle('gallery-expanded');
+    toggle.textContent = expanded ? 'Show less' : 'Show more';
+    toggle.setAttribute('aria-expanded', expanded);
+  });
+});
+

@@ -387,6 +387,30 @@ img {
   background: radial-gradient(700px 250px at 50% 0%, rgba(255, 208, 42, .08), transparent)
 }
 
+/* Optional background image for the page hero. Uses an overlay to preserve text contrast. */
+.page-hero--bg {
+  /* layer a dark gradient over the image for consistent contrast */
+  background-image: linear-gradient(rgba(7,10,13,0.55), rgba(7,10,13,0.45)), url('https://plus.unsplash.com/premium_photo-1754211702117-037d01638b4e?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGVhcnRoJTIwbW92aW5nJTIwZXF1aXBtZW50fGVufDB8fDB8fHww');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: var(--text);
+}
+
+/* Slightly increase padding so text has breathing room against the background */
+.page-hero--bg .container {
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+@media (max-width: 640px) {
+  /* On small screens, keep the hero compact and reduce overlay opacity for clarity */
+  .page-hero--bg {
+    background-image: linear-gradient(rgba(7,10,13,0.6), rgba(7,10,13,0.5)), url('https://plus.unsplash.com/premium_photo-1754211702117-037d01638b4e?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGVhcnRoJTIwbW92aW5nJTIwZXF1aXBtZW50fGVufDB8fDB8fHww');
+    padding: 36px 0;
+  }
+}
+
 .filters {
   display: flex;
   gap: 10px;
@@ -551,6 +575,49 @@ img {
   gap: 2rem;
   margin-top: 3rem;
 }
+
+/* gallery styles for products page */
+.equipment-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  align-items: start;
+  padding: 8px 0;
+}
+
+.equipment-gallery .gallery-img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  justify-self: center;
+  height: 200px;
+  object-fit: cover;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.equipment-gallery .gallery-img:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+}
+
+/* collapsed images are hidden on small screens and revealed by JS */
+.equipment-gallery .collapsed {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  /* show more images on wide screens */
+  .equipment-gallery .collapsed {
+    display: block;
+  }
+}
+
+/* when gallery is expanded via JS we attach .expanded to body */
+body.gallery-expanded .equipment-gallery .collapsed {
+  display: block;
+}
+
 
 .equipment-card {
   background: #fff;
