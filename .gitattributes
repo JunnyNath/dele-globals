@@ -1,0 +1,5 @@
+*.html merge=union
+*.css merge=union
+*.js merge=union
+*.md merge=union
+*.json merge=union

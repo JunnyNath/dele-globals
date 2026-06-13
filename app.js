@@ -37,11 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const formMessage = document.getElementById("formMessage");
 
   if (form) {
-<<<<<<< HEAD
     form.addEventListener("submit", async (e) => {
-=======
-    form.addEventListener("submit", (e) => {
->>>>>>> 492d48c91e6b1568ba5be713e7f4ddb0195f3623
       e.preventDefault();
       const name = document.getElementById("name").value.trim();
       const company = document.getElementById("company").value.trim();
@@ -53,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const location = document.getElementById("location").value.trim();
       const notes = document.getElementById("notes").value.trim();
 
-<<<<<<< HEAD
       if (!(name && company && email && phone && equipment && start && duration && location && notes)) {
         formMessage.textContent = "❌ Please fill all fields.";
         formMessage.style.color = "red";
@@ -94,14 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
       } catch (error) {
         console.error("Send email error:", error);
         formMessage.textContent = error.message || "❌ Unable to send your request.";
-=======
-      if (name && company && email && phone && equipment && start && duration && location && notes) {
-        formMessage.textContent = "✅ Message sent successfully!";
-        formMessage.style.color = "green";
-        form.reset();
-      } else {
-        formMessage.textContent = "❌ Please fill all fields.";
->>>>>>> 492d48c91e6b1568ba5be713e7f4ddb0195f3623
         formMessage.style.color = "red";
       }
     });
