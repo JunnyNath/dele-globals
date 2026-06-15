@@ -1,8 +1,13 @@
 import express from "express";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
 
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(express.json());
@@ -19,7 +24,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static("public"));
+app.use(express.static(__dirname));
+app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")));
 
 const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY;
 const MAILCHIMP_LIST_ID = process.env.MAILCHIMP_LIST_ID;
