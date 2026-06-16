@@ -24,7 +24,7 @@ function sendMail() {
             document.getElementById("phone").value = "";
             document.getElementById("equipment-select").value = "";
             document.getElementById("start").value = "";
-            document.getElementBy("duration").value = "";
+            document.getElementById("duration").value = "";
             document.getElementById("location").value = "";
             document.getElementById("notes").value = "";
             console.log(res);

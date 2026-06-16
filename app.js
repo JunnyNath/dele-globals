@@ -212,7 +212,7 @@ function subscribeNewsletter(formElement) {
   }
   responseElement.textContent = "Subscribing...";
   responseElement.style.color = "var(--text)";
-  fetch('http://localhost:4000/subscribe', {
+  fetch('/subscribe', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -229,16 +229,17 @@ function subscribeNewsletter(formElement) {
     }
     return response.json();
   })
-
   .then(data => {
-    responseElement.textContent = data.message || "Successfully subscribed!";
-    responseElement.style.color = "green";
+    if (responseElement) responseElement.textContent = data.message || "Successfully subscribed!";
+    if (responseElement) responseElement.style.color = "green";
     emailInput.value = "";
   })
   .catch(error => {
     console.error("Subscription error:", error);
-    responseElement.textContent = error.message || "Failed to subscribe. Please try again later.";
-    responseElement.style.color = "red";
+    if (responseElement) {
+      responseElement.textContent = error.message || "Failed to subscribe. Please try again later.";
+      responseElement.style.color = "red";
+    }
   });
 }
 
