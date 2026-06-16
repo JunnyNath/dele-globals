@@ -1,6 +1,7 @@
 import express from "express";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
+import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -25,7 +26,23 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static(__dirname));
+
 app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")));
+
+app.get("/:page", (req, res, next) => {
+  const page = req.params.page;
+  const filePath = path.join(__dirname, `${page}.html`);
+
+  if (fs.existsSync(filePath)) {
+    return res.sendFile(filePath);
+  }
+
+  return next();
+});
+
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, "404.html"));
+});
 
 const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY;
 const MAILCHIMP_LIST_ID = process.env.MAILCHIMP_LIST_ID;
