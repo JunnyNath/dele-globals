@@ -63,6 +63,20 @@ app.post("/subscribe", async (req, res) => {
       });
     }
 
+    // Support a test/mock mode for local development so subscriptions
+    // can be exercised without valid Mailchimp keys. Enable by setting
+    // MAILCHIMP_API_KEY to a placeholder value or setting MOCK_SUBSCRIBE=true
+    if (
+      process.env.MOCK_SUBSCRIBE === "true" ||
+      (MAILCHIMP_API_KEY && MAILCHIMP_API_KEY.includes("placeholder"))
+    ) {
+      console.log("Mock subscribe active - returning success for:", email);
+      return res.status(200).json({
+        success: true,
+        message: "(Mock) Successfully subscribed to newsletter!",
+      });
+    }
+
     const mailchimpUrl = `https://${MAILCHIMP_DATA_CENTER}.api.mailchimp.com/3.0/lists/${MAILCHIMP_LIST_ID}/members`;
     const response = await fetch(mailchimpUrl, {
       method: "POST",
