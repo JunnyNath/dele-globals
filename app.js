@@ -205,6 +205,7 @@ function closeAvailabilityModal() {
 function subscribeNewsletter(formElement) {
   const emailInput = formElement.querySelector('input[type="email"]');
   const responseElement = document.getElementById("response");
+  const submitBtn = formElement.querySelector('button[type="submit"], input[type="submit"]');
 
   if (!emailInput || !emailInput.value) {
     if (responseElement) {
@@ -217,6 +218,12 @@ function subscribeNewsletter(formElement) {
   if (responseElement) {
     responseElement.textContent = "Subscribing...";
     responseElement.style.color = "var(--text)";
+  }
+
+  if (submitBtn) {
+    try { submitBtn.dataset._orig = submitBtn.textContent; } catch(e){}
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Subscribing...';
   }
 
   fetch('/subscribe', {
@@ -243,20 +250,72 @@ function subscribeNewsletter(formElement) {
 
       return data;
     })
-    .then((data) => {
-      if (responseElement) responseElement.textContent = data.message || "Successfully subscribed!";
-      if (responseElement) responseElement.style.color = "green";
-      emailInput.value = "";
+  .then((data) => {
+    if (responseElement) {
+      responseElement.textContent = data.message || "Successfully subscribed!";
+      responseElement.style.color = "green";
+    }
+    emailInput.value = "";
+    if (submitBtn) { 
+      submitBtn.disabled = false; 
+      try { submitBtn.textContent = submitBtn.dataset._orig || 'Subscribe'; } catch(e){} 
+    }
+    // show visual toast
+    try { showToast(data.message || 'Successfully subscribed!', 'success'); } catch(e){}
     })
     .catch((error) => {
       console.error("Subscription error:", error);
       if (responseElement) {
         responseElement.textContent = error.message || "Failed to subscribe. Please try again later.";
         responseElement.style.color = "red";
+        if (submitBtn) { submitBtn.disabled = false; try { submitBtn.textContent = submitBtn.dataset._orig || 'Subscribe'; } catch(e){} }
       }
-    });
+    // show visual toast
+    try { showToast(error.message || 'Failed to subscribe. Please try again later.', 'error'); } catch(e){}
+  });
 }
 
+// Toast utilities
+function ensureToastContainer() {
+  let c = document.getElementById('toast-container');
+  if (!c) {
+    c = document.createElement('div');
+    c.id = 'toast-container';
+    c.className = 'toast-container';
+    c.setAttribute('aria-live', 'polite');
+    document.body.appendChild(c);
+  }
+  return c;
+}
+
+function showToast(message, type = 'info', duration = 4000) {
+  const container = ensureToastContainer();
+  const t = document.createElement('div');
+  t.className = `toast ${type}`;
+  t.textContent = message;
+  // add a dismiss button for accessibility and manual close
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'close-btn';
+  btn.setAttribute('aria-label', 'Dismiss notification');
+  btn.innerHTML = '&times;';
+  btn.addEventListener('click', () => {
+    // immediate remove
+    if (t._removeTimer) clearTimeout(t._removeTimer);
+    t.classList.remove('show');
+    setTimeout(() => t.remove(), 160);
+  });
+
+  t.appendChild(btn);
+  container.appendChild(t);
+  // trigger animation
+  requestAnimationFrame(() => t.classList.add('show'));
+  // remove after duration
+  t._removeTimer = setTimeout(() => {
+    t.classList.remove('show');
+    setTimeout(() => t.remove(), 220);
+  }, duration);
+}
 // Gallery "Show more" toggle for products page
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('gallery-toggle');

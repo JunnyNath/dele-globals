@@ -1,1 +1,0 @@
-Mailchimp configuration missing or incomplete. Newsletter subscription will run in mock mode.
