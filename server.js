@@ -38,18 +38,17 @@ const EMAILJS_API_URL =
   process.env.EMAILJS_API_URL || "https://api.emailjs.com/api/v1.0/email/send";
 const PORT = process.env.PORT || 4000;
 
-if (!MAILCHIMP_API_KEY || !MAILCHIMP_LIST_ID) {
-  console.error(
-    "Missing required environment variables: MAILCHIMP_API_KEY and/or MAILCHIMP_LIST_ID"
-  );
-  process.exit(1);
-}
-
 if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_USER_ID) {
   console.error(
     "Missing required EmailJS environment variables: EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, and/or EMAILJS_USER_ID"
   );
   process.exit(1);
+}
+
+if (!MAILCHIMP_API_KEY || !MAILCHIMP_LIST_ID || !MAILCHIMP_DATA_CENTER) {
+  console.warn(
+    "Mailchimp configuration missing or incomplete. Newsletter subscription will run in mock mode."
+  );
 }
 
 app.post("/subscribe", async (req, res) => {
@@ -65,10 +64,13 @@ app.post("/subscribe", async (req, res) => {
 
     // Support a test/mock mode for local development so subscriptions
     // can be exercised without valid Mailchimp keys. Enable by setting
-    // MAILCHIMP_API_KEY to a placeholder value or setting MOCK_SUBSCRIBE=true
+    // MOCK_SUBSCRIBE=true or by using incomplete Mailchimp config.
     if (
       process.env.MOCK_SUBSCRIBE === "true" ||
-      (MAILCHIMP_API_KEY && MAILCHIMP_API_KEY.includes("placeholder"))
+      !MAILCHIMP_API_KEY ||
+      !MAILCHIMP_LIST_ID ||
+      !MAILCHIMP_DATA_CENTER ||
+      MAILCHIMP_API_KEY.includes("placeholder")
     ) {
       console.log("Mock subscribe active - returning success for:", email);
       return res.status(200).json({
@@ -90,7 +92,12 @@ app.post("/subscribe", async (req, res) => {
       }),
     });
 
-    const data = await response.json();
+    let data;
+    try {
+      data = await response.json();
+    } catch (parseError) {
+      data = { detail: await response.text() };
+    }
 
     if (!response.ok) {
       return res.status(400).json({

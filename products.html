@@ -216,14 +216,22 @@
       </div>
       <div>
         <h4>Newsletter</h4>
-        <form action="https://us10.api.mailchimp.com/3.0/lists/1c94b56dee/members" 
-        id="newsletter-form"
-        class="newsletter" onsubmit="event.preventDefault(); subscribeNewsletter(this)">
-          <input type="email" placeholder="Email address" id="email" style="border: 1px solid var(--text); border-radius: 8px;" required />
-          <button class="btn btn-secondary">Subscribe</button>
-        </form>
-
-         <p id="response"></p>
+          <form
+            action="/subscribe"
+            id="newsletter-form"
+            class="newsletter"
+            onsubmit="event.preventDefault(); subscribeNewsletter(this)"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="Email address"
+              id="newsletter-email"
+              style="border: 1px solid var(--text); border-radius: 8px;"
+              required
+            />
+            <button class="btn btn-secondary">Subscribe</button>
+          </form>
 
       </div>
     </div>

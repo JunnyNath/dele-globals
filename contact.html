@@ -211,15 +211,16 @@
         <div>
           <h4>Newsletter</h4>
           <form
-            action="https://us10.api.mailchimp.com/3.0/lists/1c94b56dee/members"
+            action="/subscribe"
             id="newsletter-form"
             class="newsletter"
             onsubmit="event.preventDefault(); subscribeNewsletter(this)"
           >
             <input
               type="email"
+              name="email"
               placeholder="Email address"
-              id="email"
+              id="newsletter-email"
               style="border: 1px solid var(--text); border-radius: 8px"
               required
             />

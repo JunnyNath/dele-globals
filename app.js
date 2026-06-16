@@ -205,42 +205,56 @@ function closeAvailabilityModal() {
 function subscribeNewsletter(formElement) {
   const emailInput = formElement.querySelector('input[type="email"]');
   const responseElement = document.getElementById("response");
+
   if (!emailInput || !emailInput.value) {
-    responseElement.textContent = "Please enter a valid email address";
-    responseElement.style.color = "red";
+    if (responseElement) {
+      responseElement.textContent = "Please enter a valid email address";
+      responseElement.style.color = "red";
+    }
     return;
   }
-  responseElement.textContent = "Subscribing...";
-  responseElement.style.color = "var(--text)";
+
+  if (responseElement) {
+    responseElement.textContent = "Subscribing...";
+    responseElement.style.color = "var(--text)";
+  }
+
   fetch('/subscribe', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      email: emailInput.value
-    })
+      email: emailInput.value,
+    }),
   })
-  .then(response => {
-    if (!response.ok) {
-      return response.json().then(data => {
+    .then(async (response) => {
+      const rawText = await response.text();
+      let data;
+      try {
+        data = JSON.parse(rawText);
+      } catch {
+        data = { message: rawText };
+      }
+
+      if (!response.ok) {
         throw new Error(data.message || `HTTP error! status: ${response.status}`);
-      });
-    }
-    return response.json();
-  })
-  .then(data => {
-    if (responseElement) responseElement.textContent = data.message || "Successfully subscribed!";
-    if (responseElement) responseElement.style.color = "green";
-    emailInput.value = "";
-  })
-  .catch(error => {
-    console.error("Subscription error:", error);
-    if (responseElement) {
-      responseElement.textContent = error.message || "Failed to subscribe. Please try again later.";
-      responseElement.style.color = "red";
-    }
-  });
+      }
+
+      return data;
+    })
+    .then((data) => {
+      if (responseElement) responseElement.textContent = data.message || "Successfully subscribed!";
+      if (responseElement) responseElement.style.color = "green";
+      emailInput.value = "";
+    })
+    .catch((error) => {
+      console.error("Subscription error:", error);
+      if (responseElement) {
+        responseElement.textContent = error.message || "Failed to subscribe. Please try again later.";
+        responseElement.style.color = "red";
+      }
+    });
 }
 
 // Gallery "Show more" toggle for products page
