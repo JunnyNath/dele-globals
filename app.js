@@ -226,7 +226,8 @@ function subscribeNewsletter(formElement) {
     submitBtn.textContent = 'Subscribing...';
   }
 
-  fetch('/subscribe', {
+  fetch('https://dele-globals.onrender.com/api/subscribe',
+{
     method: "POST",
     headers: {
       "Content-Type": "application/json",
