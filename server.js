@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
 import fs from "fs";
@@ -12,18 +13,22 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(express.json());
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  if (req.method === "OPTIONS") {
-    return res.status(200).end();
-  }
-  next();
-});
+
+const allowedOrigins = [
+  'https://dele-globals.vercel.app',
+  'http://localhost:3000'
+];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type'],
+    credentials: true,
+  })
+);
+
+// No explicit preflight route needed; `cors()` handles OPTIONS automatically
 
 app.use(express.static(__dirname));
 
