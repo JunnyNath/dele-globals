@@ -148,7 +148,7 @@ app.get('/health', (req, res) => {
   });
 });
 
-app.post("/subscribe", async (req, res) => {
+app.post("/api/subscribe", async (req, res) => {
   try {
     const { email } = req.body;
 
